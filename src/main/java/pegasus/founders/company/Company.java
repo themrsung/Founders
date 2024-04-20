@@ -130,7 +130,8 @@ public interface Company {
 
     /**
      * Returns the balance of this company. This should not be used to check whether the company
-     * is able to pay a certain amount of money.
+     * is able to pay a certain amount of money. {@link Companies#has(Company, double)} should be
+     * used instead.
      *
      * @return The balance of this company
      */

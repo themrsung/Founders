@@ -3,10 +3,29 @@ package pegasus.founders;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import pegasus.founders.company.Companies;
 
 import java.util.Objects;
 
 public final class Founders extends JavaPlugin {
+    //
+    // Companies
+    //
+
+    /**
+     * Returns the companies state.
+     *
+     * @return The companies state
+     */
+    public static Companies getCompanies() {
+        return companies;
+    }
+
+    /**
+     * The companies state.
+     */
+    private static final Companies companies = new Companies();
+
     //
     // Vault
     //
