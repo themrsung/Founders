@@ -12,13 +12,14 @@ import java.util.UUID;
 public class ServerCompany extends AbstractCompany {
     /**
      * Creates a new server-owned company.
-     * @param uniqueId The unique identifier of this company
-     * @param name The name of this company
-     * @param symbol The symbol of this company
+     *
+     * @param uniqueId     The unique identifier of this company
+     * @param name         The name of this company
+     * @param symbol       The symbol of this company
      * @param creationDate The creation date of this company
-     * @param ceo The CEO of this company
-     * @param balance The balance of this company
-     * @param employment The employment of this company
+     * @param ceo          The CEO of this company
+     * @param balance      The balance of this company
+     * @param employment   The employment of this company
      */
     public ServerCompany(
             UUID uniqueId,

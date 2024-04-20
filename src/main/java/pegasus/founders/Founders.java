@@ -2,8 +2,6 @@ package pegasus.founders;
 
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -15,6 +13,7 @@ public final class Founders extends JavaPlugin {
 
     /**
      * Returns the economy.
+     *
      * @return The economy
      * @throws NullPointerException When the Vault economy provider is not found, or has not been loaded
      */

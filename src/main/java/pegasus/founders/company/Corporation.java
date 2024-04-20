@@ -17,14 +17,15 @@ public class Corporation extends AbstractCompany {
 
     /**
      * Creates a new shareholder-owned company.
-     * @param uniqueId The unique identifier of this company
-     * @param name The name of this company
-     * @param symbol The symbol of this company
+     *
+     * @param uniqueId     The unique identifier of this company
+     * @param name         The name of this company
+     * @param symbol       The symbol of this company
      * @param creationDate The creation date of this company
-     * @param ceo The CEO of this company
-     * @param balance The balance of this company
-     * @param employment The employment of this company
-     * @param ownership The ownership of this company
+     * @param ceo          The CEO of this company
+     * @param balance      The balance of this company
+     * @param employment   The employment of this company
+     * @param ownership    The ownership of this company
      */
     public Corporation(
             UUID uniqueId,
@@ -42,6 +43,7 @@ public class Corporation extends AbstractCompany {
 
     /**
      * Returns the number of outstanding shares.
+     *
      * @return The number of outstanding shares
      */
     public long getOutstandingShares() {
@@ -50,6 +52,7 @@ public class Corporation extends AbstractCompany {
 
     /**
      * Returns the ownership data of this company.
+     *
      * @return The ownership data of this company
      */
     public Map<OfflinePlayer, Long> getOwnership() {
@@ -58,6 +61,7 @@ public class Corporation extends AbstractCompany {
 
     /**
      * Returns the majority shareholder(s).
+     *
      * @return The majority shareholder(s)
      */
     public Map<OfflinePlayer, Long> getMajorityShareholders() {
@@ -77,6 +81,7 @@ public class Corporation extends AbstractCompany {
 
     /**
      * Returns the stream of shareholders of this company.
+     *
      * @return The shareholders of this company
      */
     public Stream<OfflinePlayer> getShareholders() {
@@ -86,6 +91,7 @@ public class Corporation extends AbstractCompany {
     /**
      * Returns the number of shares the given player owns. If the player is not a shareholder,
      * this will return zero.
+     *
      * @param shareholder The shareholder to query
      * @return The number of shares the player owns
      */
@@ -95,9 +101,10 @@ public class Corporation extends AbstractCompany {
 
     /**
      * Transfers shares between shareholders.
-     * @param sender The sender
+     *
+     * @param sender    The sender
      * @param recipient The recipient
-     * @param shares The number of shares to transfer
+     * @param shares    The number of shares to transfer
      * @return {@code true} if the transfer was successful, {@code false} otherwise
      */
     public boolean transferShares(OfflinePlayer sender, OfflinePlayer recipient, long shares) {
@@ -124,8 +131,9 @@ public class Corporation extends AbstractCompany {
 
     /**
      * Issues new shares to the recipient.
+     *
      * @param recipient The recipient
-     * @param shares The number of shares to issue
+     * @param shares    The number of shares to issue
      */
     public void issueShares(OfflinePlayer recipient, long shares) {
         var sharesBefore = getNumberOfShares(recipient);
@@ -136,6 +144,7 @@ public class Corporation extends AbstractCompany {
 
     /**
      * Retires shares at the expense of the sender.
+     *
      * @param sender The sender
      * @param shares The number of shares to retire
      * @return {@code true} if the operation was successful
@@ -149,7 +158,7 @@ public class Corporation extends AbstractCompany {
         var totalSharesBefore = getOutstandingShares();
         var totalSharesAfter = totalSharesBefore - shares;
 
-        if(totalSharesAfter < 1) return false;
+        if (totalSharesAfter < 1) return false;
 
         ownership.put(sender, sharesAfter);
         return true;
