@@ -1,0 +1,6 @@
+name: Founders
+version: '${project.version}'
+main: pegasus.founders.Founders
+api-version: '1.20'
+depend:
+  - Vault
